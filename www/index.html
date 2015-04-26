@@ -55,9 +55,31 @@
 			                </div>
 			                <div class="panel-body" ng-repeat="user in userCtrl.users">
 			                    <p><b>Nickname:</b> {{user.nickname}}</p>
+			                    <div class="panel-body" ng-repeat="notes in user.listNotes">
+			                    	<p>- {{notes.text}}</p>
+			                	</div>
 			                </div>
+			                
 			            </div>
 			        </section>
+			    </div>
+			    <div class="col-sm-3">
+			        <form name="userForm" ng-submit="userForm.$valid && userCtrl.addUser()" novalidate>
+			            <h4>Create user</h4>
+			            <fieldset class="form-group">
+			                <input ng-minlength=4 class="form-control" placeholder="Write the Name"
+			                       title="Name" ng-model="userCtrl.user.name" required/>
+			                <input ng-minlength=4 class="form-control" placeholder="Write the surname"
+			                       title="Surname" ng-model="userCtrl.user.surname" required/>
+			                <input ng-minlength=4 class="form-control" placeholder="Write the nickname"
+			                       title="Nickname" ng-model="userCtrl.user.username" required/>
+			                <input ng-minlength=4 class="form-control" placeholder="Write the password"
+			                       title="Password" ng-model="userCtrl.user.pass" required/>
+			            </fieldset>
+			            <fieldset class="form-group">
+			                <input type="submit" class="btn btn-primary pull-right" value="Create user"/>
+			            </fieldset>
+			        </form>
 			    </div>
 			</div>
 		</div>
