@@ -4,10 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Project-Notes</title>
 
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	
-	<!-- Angular and JavaScript file references -->
+	 <link rel="stylesheet" href="app.css">
+	
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.3.9/angular-resource.js"></script>
     <script type="text/javascript" src="app.js"></script>
@@ -72,8 +72,8 @@
 			                <input ng-minlength=4 class="form-control" placeholder="Write the surname"
 			                       title="Surname" ng-model="userCtrl.user.surname" required/>
 			                <input ng-minlength=4 class="form-control" placeholder="Write the nickname"
-			                       title="Nickname" ng-model="userCtrl.user.username" required/>
-			                <input ng-minlength=4 class="form-control" placeholder="Write the password"
+			                       title="Nickname" ng-model="userCtrl.user.nickname" required/>
+			                <input ng-minlength=6 class="form-control" placeholder="Write the password"
 			                       title="Password" ng-model="userCtrl.user.pass" required/>
 			            </fieldset>
 			            <fieldset class="form-group">
@@ -83,6 +83,28 @@
 			    </div>
 			</div>
 		</div>
+	</div>
+	
+	<div id=						< style=”position: fixed; width: 350px; height: 190px; 
+			top: 0; left: 0; font-family:Verdana, Arial, Helvetica, sans-serif; 
+			font-size: 12px; font-weight: normal; border: #333333 3px solid; 
+			background-color: #FAFAFA; color: #000000; display:none;”>
+		<form name="userForm" ng-submit="userForm.$valid && userCtrl.addUser()" novalidate>
+            <h4>Create user</h4>
+            <fieldset class="form-group">
+                <input ng-minlength=4 class="form-control" placeholder="Write the Name"
+                       title="Name" ng-model="userCtrl.user.name" required/>
+                <input ng-minlength=4 class="form-control" placeholder="Write the surname"
+                       title="Surname" ng-model="userCtrl.user.surname" required/>
+                <input ng-minlength=4 class="form-control" placeholder="Write the nickname"
+                       title="Nickname" ng-model="userCtrl.user.nickname" required/>
+                <input ng-minlength=6 class="form-control" placeholder="Write the password"
+                       title="Password" ng-model="userCtrl.user.pass" required/>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="submit" class="btn btn-primary pull-right" value="Create user"/>
+            </fieldset>
+        </form>
 	</div>
 </body>
 </html>

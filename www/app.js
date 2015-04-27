@@ -10,10 +10,10 @@ app.controller('userController', ['$http', function ($http){
 		projectNotes.users = data;
     }).
 	  error(function(data) {
-		  window.alert("ERROR");
+		  window.alert("ERROR - Fallo al realizar el GET");
 	});	
 	
-	this.addUser = function pushData(){
+	this.addUser = function(){
 		projectNotes.users.push(this.user);
 		$http({
             method: 'POST',
@@ -22,7 +22,7 @@ app.controller('userController', ['$http', function ($http){
             headers: {'Content-Type': 'application/vnd.note.api.user+json'}
         }).success(function(data) {
 		}).error(function(data) {
-			window.alert("ERROR");
+			window.alert("ERROR - Fallo al realizar el POST");
 		});
 		this.user = {};
 	};
@@ -39,3 +39,17 @@ app.controller('TabController', function(){
         return this.tab === isSet;
     };
 });
+
+function showFormSignUp()
+{
+    var ventana = document.getElementById(‘formSignUp’);
+    ventana.style.marginTop = “100px”;
+    ventana.style.left = ((document.body.clientWidth-350) / 2) +  “px”;
+    ventana.style.display = ‘block’;
+};
+
+function hideFormSignUp()
+{
+    var ventana = document.getElementById(‘formSignUp’);
+    ventana.style.display = ‘none’;
+};
